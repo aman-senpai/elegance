@@ -14,6 +14,8 @@ runtimes:
     - python@3.10.8
 lint:
   enabled:
+    - oxipng@9.0.0
+    - yamllint@1.32.0
     - checkov@2.5.8
     - eslint@8.51.0
     - git-diff-check
