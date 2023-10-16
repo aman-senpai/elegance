@@ -12,13 +12,13 @@ import Item from './item'
 
 import { toast } from "sonner";
 
-import { useQuery, useMutation } from 'convex/react'
+import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
+import DocumentList from './document-list'
 
 const Navigation = () => {
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px");
-    const documents = useQuery(api.documents.get);
     const create = useMutation(api.documents.create);
 
     const isResizingRef = useRef(false);
@@ -147,11 +147,7 @@ const Navigation = () => {
             icon={PlusCircle} />
         </div>
         <div className='mt-4'>
-            {documents?.map(document => {
-                return (
-                    <p key={document._id}>{document.title}</p>
-                )
-            })}
+            <DocumentList />
         </div>
         <div
         onMouseDown={handleMouseDown}
