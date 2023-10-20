@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 import { usePathname } from "next/navigation";
 import React, { ElementRef, useEffect, useRef, useState } from "react";
@@ -34,6 +35,7 @@ import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 
 const Navigation = () => {
+    const settings = useSettings();
     const search = useSearch();
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px");
@@ -165,7 +167,7 @@ const Navigation = () => {
                     <Item
                         label="Settings"
                         icon={Settings}
-                        onClick={() => {}}
+                        onClick={settings.onOpen}
                     />
                     <Item
                         onClick={handleCreate}
