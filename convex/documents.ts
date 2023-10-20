@@ -37,7 +37,8 @@ export const archive = mutation({
             for (const child of children) {
                 await ctx.db.patch(child._id, {
                     isArchived: true,
-                })
+                });
+
 
                 await recurseiveArchive(child._id);
             }
