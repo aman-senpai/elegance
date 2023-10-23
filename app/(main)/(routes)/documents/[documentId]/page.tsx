@@ -1,5 +1,6 @@
 "use client";
 
+import Toolbar from "@/components/toolbar";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 
@@ -21,9 +22,10 @@ const DocumentIdPage = ({ params }: DocumentIdProps) => {
     if (document === null) return <div>Not Found</div>;
 
     return (
-        <div className="bp-40">
+        <div className="pb-40">
+            <div className="h-[35vh]" />
             <div className="md:max-w-3xl lg:md-max-w-4xl mx-auto">
-                DocumentId
+                <Toolbar initialData={document} />
             </div>
         </div>
     );
