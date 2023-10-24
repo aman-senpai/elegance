@@ -37,7 +37,7 @@ const Menu = ({ documentId }: MenuProps) => {
             error: "Failed to archieve note.",
         });
 
-        router.push("/documents");
+        // router.push("/documents");
     };
 
     return (
